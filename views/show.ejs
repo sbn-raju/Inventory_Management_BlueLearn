@@ -1,0 +1,42 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Read- Inventory Management System</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <nav class="navbar">
+            <div class="left-navbar">
+                <h1>Shop Inventory Managament System</h1>
+            </div>
+            <div class="right-navbar">
+            </div>
+        </nav>
+        <div class="main-add-container">
+                <div class="left-container">
+                    <h2>Select The Category</h2>
+                    <form action="/show" method="get" >
+                        <select name="name" id="name"> 
+                            <option value="" selected disabled>Choose Your Category</option>
+                            <% for( let cat of category) { %>
+                                <option value="<%=cat.name%>"><%=cat.name%></option>
+                            <% } %>
+                        </select>
+                    <button class="btns" type="submit">Submit</button>
+                    </form>
+                </div>
+                <div class="right-container">
+                <% for( let item of items ) { %>
+                <div class="item-container">
+                    <h3><span>Item Name:</span><%= item.name %></h3>
+                    <p><span>Description:</span><%= item.description %></p>
+                    <p><span>Price:</span><%= item.price %></p>
+                    <p><span>Quantity:</span><%= item.quantity %></p>
+                </div> 
+                <% } %>
+                </div>
+        </div>
+    </body>
+    </html>

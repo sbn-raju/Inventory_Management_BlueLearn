@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="left-navbar">
+            <h1>Shop Inventory Managament System</h1>
+        </div>
+        <div class="right-navbar">
+        </div>
+    </nav>
+    <div class="main-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Catgeory</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for( let item of items) { %>
+                    <tr>
+                        <td><%= item.name %></td>
+                        <td><%= item.description %></td>
+                        <td><%= item.category %></td>
+                        <td><%= item.price %></td>
+                        <td><%= item.quantity %></td>
+                        <td><button class="btn"><a href="/destroy/remove/<%= item._id %>">Delete</a></button></td>
+                    </tr>
+                <% } %>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

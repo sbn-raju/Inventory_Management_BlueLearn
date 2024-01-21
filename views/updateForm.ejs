@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create||Inventory Management System</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        .navbar {
+            height: 4rem;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            background-color: black;
+            color: white;
+        }
+        
+        .left-navbar {
+            width: 50%;
+            height: 100%;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding-left: 2rem;
+        }
+        
+        .right-navbar {
+            width: 50%;
+            height: 100%;
+        }
+        .main-container {
+            width: 100%;
+            height: 100%;
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction:column;
+        } 
+        
+input {
+    width: 20rem;
+    border: 2px solid black;
+    padding: 0.8rem;
+    font-size: 1.3rem;
+    border-radius: 0.5rem;
+    margin-bottom: 2rem;
+}
+textarea{
+    width: 20rem;
+    border: 2px solid black;
+    padding: 0.8rem;
+    font-size: 1.3rem;
+    border-radius: 0.5rem;
+    margin-bottom: 2rem;
+    resize: none;
+}
+select {
+    width: 21.5rem;
+    border: 2px solid black;
+    padding: 0.8rem;
+    font-size: 1.3rem;
+    border-radius: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+h2 {
+    margin: 2rem;
+}
+form{
+    display: flex;
+    flex-direction: column;
+}
+.btns {
+    padding: 0.8rem;
+    border: none;
+    background-color: green;
+    color: white;
+    font-size: 1.3rem;
+    border-radius: 1rem;
+    width: 21.5rem;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="left-navbar">
+            <h1>Shop Inventory Managament System</h1>
+        </div>
+        <div class="right-navbar">
+        </div>
+    </nav>
+        <div class="main-container">
+            <form action="/update/<%= updateItem._id%>?_method=PUT" method="post">
+                <input type="text" name="name" id="" placeholder="<%= updateItem.name %>" value="<%= updateItem.name %>">
+                <textarea name="description" id="" cols="30" rows="10" placeholder="Enter Brief Description"><%= updateItem.description %></textarea>
+                <input type="text" name="category" id="" placeholder="<%= updateItem.category %>" value="<%= updateItem.category %>">
+                <input type="number" name="price" id="number" placeholder="<%= updateItem.price %>" value="<%= updateItem.price %>">
+                <input type="number" name="quantity" id="number" placeholder="E<%= updateItem.quantity %>" value="<%= updateItem.quantity %>">
+             <button class="btns" type="submit">Submit</button>
+              </form>
+        </div>
+</body>
+</html>

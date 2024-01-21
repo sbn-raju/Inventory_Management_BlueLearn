@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop Inventory Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="left-navbar">
+            <h1>Shop Inventory Managament System</h1>
+        </div>
+        <div class="right-navbar">
+        </div>
+    </nav>
+    <main>
+        <div class="main-container">
+            <h2>Admin Panel</h2>
+            <form action="/user" method="post" style="display: flex; flex-direction:column">
+                <input type="text" name="username" id="username" placeholder="Admin UserID">
+                <input type="password" name="pass" id="pass" placeholder="Admin Password">
+                <select name="ops" id="ops">
+                    <option value="" selected disabled>Choose your Operation...</option>
+                    <option value="Create">Create</option>
+                    <option value="Update">Update</option>
+                    <option value="Read">Read</option>
+                    <option value="Delete">Delete</option>
+                </select>
+                <button class="btns" type="submit">Submit</button>
+            </form>
+
+            <p>Please read README.md file to know the admin userId and Passward</p>
+        </div>
+
+    </main>
+</body>
+
+</html>
